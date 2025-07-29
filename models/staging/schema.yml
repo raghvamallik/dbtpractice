@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: analytics
+    database: analytics
+    schema: dbt_core
+    tables:
+      - name: supply
+
+models:
+  - name: stg_supply
+    description: "Staging layer for the UCI Online Retail dataset"
+    columns:
+      - name: InvoiceNo
+        tests:
+          - not_null
+      - name: is_canceled
+        description: "TRUE if the invoice is a cancellation"

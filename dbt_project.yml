@@ -1,0 +1,17 @@
+name: 'dbtpractice'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_modules"]
+
+models:
+  dbtpractice:
+    staging:
+      +schema: staging
+    intermediate:
+      +schema: intermediate
+    marts:
+      +schema: mart
